@@ -1,0 +1,11 @@
+# cat=page; type=int+; label=Doktype id to redirect to specific typenum: default to 160 if not set
+mjml.doktype = 0
+
+# cat=page; type=int+; label=Typenum used to display mjml page: default to 15 if not set
+mjml.typenum = 15
+
+# cat=advanced; type=string; label=Mjml binary path: default to node_modules/.bin/mjml if not set
+mjml.binaryPath = node_modules/.bin/mjml
+
+# cat=advanced; type=string; label=Mjml config path: default to boilerplate-mjml if not set
+mjml.configPath = boilerplate-mjml

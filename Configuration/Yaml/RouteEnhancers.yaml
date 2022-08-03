@@ -1,0 +1,6 @@
+# Example route suffix
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      email.html: 15

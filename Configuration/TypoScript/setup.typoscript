@@ -1,0 +1,27 @@
+################################################################################################
+# MJML - Example file                                                                          #
+################################################################################################
+mjml = PAGE
+mjml.typeNum = 15
+
+# META data #########################################
+mjml.config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+}
+
+# Template
+mjml.10 = FLUIDTEMPLATE
+mjml.10 {
+    format = mjml
+    file = EXT:arc_project/Resources/Private/Templates/Newsletter/Newsletter.mjml
+    file.override = EXT:arc_project/Resources/Private/Templates/Newsletter/Static/Newsletter.mjml
+    file.override.if.value.field = backend_layout
+    file.override.if.equals = pagets__staticNewsletter
+    partialRootPaths.10 = EXT:arc_project/Resources/Private/Mjml/
+    layoutRootPaths.10 = EXT:arc_project/Resources/Private/Layouts/
+    settings{
+        resourcesFolder = {$resourcesFolder}
+        imagesFolder = {$imagesFolder}
+    }
+}
