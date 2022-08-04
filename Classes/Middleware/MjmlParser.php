@@ -33,7 +33,7 @@ class MjmlParser extends AbstractMjmlMiddleware implements MiddlewareInterface
     {
         parent::__construct();
         $this->binaryPath = GeneralUtility::makeInstance(ExtensionConfiguration::class)
-            ->get('arc_mjml', 'mjml/binaryPath') ?: 'node_modules/.bin/mjml';
+            ->get('arc_mjml', 'mjml/binaryPath');
         $this->configPath = GeneralUtility::makeInstance(ExtensionConfiguration::class)
             ->get('arc_mjml', 'mjml/configPath') ?: 'boilerplate-mjml';
     }
@@ -104,7 +104,7 @@ class MjmlParser extends AbstractMjmlMiddleware implements MiddlewareInterface
     {
         $path = Environment::getProjectPath();
         $path.= '/' . trim($this->binaryPath, '/');
-        if (file_exists($path)) {
+        if ($this->binaryPath !== '' && file_exists($path)) {
             return $path;
         } else {
             return null;
