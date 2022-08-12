@@ -22,7 +22,8 @@ class MjmlRouter extends AbstractMjmlMiddleware implements MiddlewareInterface
         $response = $handler->handle($request);
         if ($this->getTyposcriptFrontendController()->page['doktype'] == $this->doktype && $this->getTyposcriptFrontendController()->type === 0) {
             // We aren't on clean newsletter page, let's redirect
-            $redirectToUri = $this->getTyposcriptFrontendController()->cObj->typoLink_URL([
+            // Sometimes cObj isn't accessible in TSFE so let's instanciate ours
+            $redirectToUri = $this->getContentObjectRenderer()->typoLink_URL([
                 'parameter' => $this->getTyposcriptFrontendController()->page['uid'] . ',' . $this->typenum,
                 // ensure absolute URL is generated when having a valid Site
                 'forceAbsoluteUrl' => $GLOBALS['TYPO3_REQUEST'] instanceof ServerRequestInterface
