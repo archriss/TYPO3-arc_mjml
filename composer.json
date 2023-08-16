@@ -3,7 +3,7 @@
     "description": "A MJML parser extension. No plugin, just middlewares routing and parsing newsletter doktype to a mjml content",
     "type": "typo3-cms-extension",
     "require": {
-        "typo3/cms-core": "^9.5 || ^10.4 || ^11.5"
+        "typo3/cms-core": "^11.5"
     },
     "license": "GPL-2.0",
     "extra": {
